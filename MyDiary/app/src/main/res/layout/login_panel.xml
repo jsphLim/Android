@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.ly.Login.LoginPanel">
+    <!--android:background="@drawable/art_login_bg"-->
+    <include layout="@layout/title"
+        android:id="@+id/include" />
+
+    <Button
+        android:id="@+id/loginBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="login"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="354dp"
+        android:layout_below="@+id/SavePassword"
+        android:layout_alignStart="@+id/Login_Password"
+        android:layout_marginTop="30dp" />
+
+    <EditText
+        android:id="@+id/Login_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="请输入账号"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        tools:layout_editor_absoluteY="222dp"
+        tools:layout_editor_absoluteX="85dp"
+        android:layout_marginBottom="22dp"
+        android:layout_above="@+id/Login_Password"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/Login_Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteY="280dp"
+        android:maxLines="1"
+        tools:layout_editor_absoluteX="85dp"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/Login_Name" />
+
+    <CheckBox
+        android:id="@+id/SavePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="记住密码"
+        android:layout_below="@+id/Login_Password"
+        android:layout_toEndOf="@+id/loginBt" />
+
+    <Button
+        android:id="@+id/registerBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册"
+        android:layout_alignBaseline="@+id/loginBt"
+        android:layout_alignBottom="@+id/loginBt"
+        android:layout_alignEnd="@+id/Login_Password" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Login_Name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="46dp"
+        android:textSize="60px"
+        android:text="登录" />
+
+    <EditText
+        android:id="@+id/registerUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Login_Name"
+        android:layout_alignStart="@+id/Login_Name"
+        android:layout_marginBottom="21dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="请输入用户名" />
+
+    <EditText
+        android:id="@+id/registerPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Login_Password"
+        android:layout_below="@+id/registerUser"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="请输入密码" />
+
+    <EditText
+        android:id="@+id/confirmpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Login_Password"
+        android:layout_alignTop="@+id/SavePassword"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="请确认密码" />
+
+    <Button
+        android:id="@+id/confirmRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/loginBt"
+        android:layout_centerHorizontal="true"
+        android:text="确认注册" />
+
+
+</RelativeLayout>
