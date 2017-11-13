@@ -22,6 +22,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.ly.main.Main;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -174,33 +176,37 @@ public class LoginPanel extends AppCompatActivity implements OnClickListener {
                boolean isremeber = save_password.isChecked();
             try {
                 JSONObject MS = SetData();
-                if(MS.get("username").equals("")){
+                if(MS.get("username").toString().equals("")){
                     Toast.makeText(LoginPanel.this,"账号不能为空",Toast.LENGTH_SHORT).show();
                     login_name.setTextColor(Color.rgb(0,0,0));
                 }
-                else if(MS.get("password").equals("")){
+                else if(MS.get("password").toString().equals("")){
                     Toast.makeText(LoginPanel.this,"密码不能为空",Toast.LENGTH_SHORT).show();
                     login_password.setTextColor(Color.rgb(0,0,0));
                 }
-                if (islogin(MS)) {
-                    if (isremeber) {
-                        login_name.setText(MS.get("username").toString());
-                        String base64 = MS.get("password").toString();
-                        String password = new String(Base64.decode(base64.getBytes(), Base64.DEFAULT));
-                        login_password.setText(password);
+                else {
+                    if (islogin(MS)) {
+                        if (isremeber) {
+                            login_name.setText(MS.get("username").toString());
+                            String base64 = MS.get("password").toString();
+                            String password = new String(Base64.decode(base64.getBytes(), Base64.DEFAULT));
+                            login_password.setText(password);
+                        } else {
+                            login_name.setText("");
+                            login_password.setText("");
+                        }
+                        Toast.makeText(LoginPanel.this, "登录成功", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginPanel.this, Main.class);
+                        startActivity(intent);
+                        //TODO  Intent intent =
                     } else {
-                        login_name.setText("");
-                        login_password.setText("");
+                        Toast.makeText(LoginPanel.this, "账号或密码错误", Toast.LENGTH_SHORT).show();
                     }
-                    Toast.makeText(LoginPanel.this,"登录成功",Toast.LENGTH_SHORT).show();
-                    //TODO  Intent intent =
-                }
-                else{
-                    Toast.makeText(LoginPanel.this,"账号或密码错误",Toast.LENGTH_SHORT).show();
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
             break;
             case R.id.registerBt:
                 RegisterPanel();

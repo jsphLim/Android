@@ -7,4 +7,13 @@
     <color name="bg_toolbar">#32A082</color>
     <color name="bg_top_btn_pressed">#969696</color>
 
+    <color name="colorInActive">	#F8F8FF</color>
+    <color name="colorBarBg">#7FFFAA</color>
+
+    <color name="colorBike">#D8BFD8</color>
+    <color name="colorUnBike">#EE82EE</color>
+    <color name="colorRun">#BA55D3</color>
+    <color name="colorUnRun">#8A2BE2</color>
+    <color name="colorBus">#B0C4DE</color>
+    <color name="colorUnBus">#00BFFF</color>
 </resources>

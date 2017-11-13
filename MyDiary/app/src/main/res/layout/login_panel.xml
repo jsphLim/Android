@@ -8,7 +8,7 @@
     tools:context="com.ly.Login.LoginPanel">
     <!--android:background="@drawable/art_login_bg"-->
     <include layout="@layout/title"
-        android:id="@+id/include" />
+        android:id="@+id/loginTitle" />
 
     <Button
         android:id="@+id/loginBt"
